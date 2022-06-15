@@ -5,12 +5,34 @@
     text-decoration: none;
 }
 
+/* INICIO HEADER */
+
 header{
-    height: 80px;
-    background-color: aquamarine;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50000;
 }
 
-header img{
+header.sticky{
+    background: #fff;
+}
+
+header.sticky nav ul li a:before{
+    background: #08254f;
+}
+
+header.sticky nav ul li a{
+    color: #08254f;
+}
+
+nav{
+    height: 80px;
+    background-color: transparent
+}
+
+.logo{
     width: 100px;
     position: absolute;
     top: 17px;
@@ -18,211 +40,681 @@ header img{
     height: 60px;
 }
 
-header nav ul{
+nav ul{
     float: right;
     margin-right: 25px;
 }
 
-header nav ul li{
+nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 15px;
 }
 
-header nav ul li a{
+nav ul li a{
     position: relative;
     font-size: 18px;
     text-transform: uppercase;
-    color: white;
+    color: black;
     cursor: pointer;
     padding: 5px 0;
 }
 
-header nav ul li a:before{
+nav ul li a:before{
     position: absolute;
     content: '';
     left: 0;
     bottom: 0;
     height: 1px;
     width: 100%;
-    background: white;
+    background: black;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform .4s linear;
 }
 
-header nav ul li a:hover:before{
+nav ul li a:hover:before{
     transform: scaleX(1);
     transform-origin: left;
 }
+
+label #btn,
+label #cancel{
+    color: #08254f;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+/* FIM HEADER */
+
+
+
+/* INICIO BANNER */
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+.banner .content{
+    max-width: 50%;
+    text-align: center;
+}
+
+.banner .content h3{
+    text-transform: uppercase;
+    color: #08254f;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.banner .content h2{
+    text-transform: uppercase;
+    color: #08254f;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.banner .content .btn{
+    font-size: 1em;
+    color: #08254f;
+    background: white;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border-radius: 100px;
+    border: 1px solid #08254f;
+}
+
+.banner .content .btn:hover{
+    letter-spacing: 6px;
+}
+
+/* FIM BANNER */
+
+
+
+/* INICIO CARDS */
+
+.flex-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 50px 50px;
+    background: transparent;
+    margin-top: -150px;
+    z-index: 10000;
+}
+
+.flex-container .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    background: white;
+}
+
+.flex-container .card img{
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+
+.flex-container .card h2{
+    font-size: 15px;
+    color: #08254f;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.flex-container .card h3{
+    font-size: 12px;
+    color: #08254f;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.flex-container .card:hover{
+    transform: scaleY(1.2);
+    background: #08254f;
+}
+
+.flex-container .card:hover h2,
+.flex-container .card:hover h3{
+    color: white;
+}
+
+.flex-container .card:hover img{
+    display: block;
+ } 
+
+/*  FIM CARDS */
+
+
+
+/* INICIO SECTION CHOOSE */
+
+.container-choose{
+    width: 100%;
+    height: 50%;
+    
+}
+
+.container-choose h1{
+    color: #08254f;
+    font-size: 35px;
+    text-align: center;
+}
+
+.container-choose .choose{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container-choose .choose .choose-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 150px;
+    width: 250px;
+}
+
+.container-choose .choose .choose-text h2,
+.container-choose .choose .choose-text i{
+    font-size: 15px;
+    color: gray;
+}
+
+.container-choose .choose .choose-text i{
+    margin-top: 10px;
+}
+
+.container-choose .choose .choose-text:hover h2,
+.container-choose .choose .choose-text:hover i{
+    color: #08254f;
+}
+
+/* FIM SECTION CHOOSE */
+
+
+
+/* INICIO SECTION MEETING */
+
+.meeting{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.meeting .meeting-img {
+    padding: 10px;
+}
+
+.meeting .meeting-txt {
+    text-align: center;
+    padding: 10px;
+    color: gray;
+    font-style: italic;
+    width: 50%;
+}
+
+/* FIM SECTION MEETING */
+
+
+
+/* INICIO SECTION COMPANY */
+
+.company{
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+.company .company-txt,
+.company .company-card{
+    padding: 10px;
+    width: 300px;
+}
+
+.company .company-txt h2,
+.company .company-txt h3 strong{
+    color: #08254f;
+    font-weight: 900;
+}
+
+.company .company-txt p{
+    color: gray;
+    margin-top: 10px;
+}
+
+.company .company-txt h3{
+    margin-top: 10px;
+    color: gray;
+}
+
+.company .company-card img{
+    width: 100%;
+    height: 150px;
+}
+
+.company .company-card h2{
+    color: #08254f;
+}
+
+.company .company-card p{
+    color: gray;
+    margin-top: 10px;
+}
+
+.company .company-card a i{
+    color: #08254f;
+    margin-top: 10px;
+}
+
+.company .company-card a i:hover{
+    color: gray;
+}
+
+/* FIM SECTION COMPANY */
+
+
+
+/* INICIO SECTION UNMATCHED */
+
+.unmatched{
+    background: #08254f;
+    padding: 100px;
+}
+
+.unmatched .cards1,
+.unmatched .cards2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.unmatched .cards1 .unmatched-txt,
+.unmatched .cards1 .unmatched-card,
+.unmatched .cards2 .unmatched-card{
+    width: 300px;
+    height: 150px;
+    margin: 15px;
+}
+
+.unmatched .cards1 .unmatched-card,
+.unmatched .cards2 .unmatched-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.unmatched .cards1 .unmatched-txt h1{
+    color: white;
+}
+
+.unmatched .cards1 .unmatched-txt a i{
+    float: right;
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.unmatched .cards1 .unmatched-txt a i:hover{
+    color: gray;
+    transform: scale(1.3);
+}
+
+.unmatched .cards1 .unmatched-card i,
+.unmatched .cards2 .unmatched-card i{
+    color: white;
+    background-color: #08254f;
+    font-size: 50px;
+    width: 75px;
+    position: relative;
+    margin-top: -60px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.unmatched .cards1 .unmatched-card h2,
+.unmatched .cards1 .unmatched-card p,
+.unmatched .cards2 .unmatched-card h2,
+.unmatched .cards2 .unmatched-card p{
+    color: white;
+    margin-top: 10px;
+}
+
+.unmatched .cards1 .unmatched-card,
+.unmatched .cards2 .unmatched-card{
+    border: 2px solid white;
+}
+
+/* FIM SECTION UNMATCHED */
+
+
+
+/* INICIO FOOTER */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #04132a;
+    padding: 50px;
+}
+
+footer .redes img{
+    width: 100px;
+    height: 60px;
+}
+
+footer .redes .footer-redes{
+    border: 1px solid white;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .redes p{
+    color: white;
+}
+
+footer .redes i{
+    font-size: 20px;
+    padding: 10px;
+    width: 55px;
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    margin-top: 10px;
+}
+
+footer .redes i:hover{
+    color: gray;
+    transform: scale(0.7);
+}
+
+footer .footer-cards{
+    width: 25%;
+    padding: 10px;
+}
+
+footer .institutional h2,
+footer .services h2,
+footer .subscribe h2{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-cards p{
+    color: white;
+    margin-top: 5px;
+}
+
+footer .institutional p:hover,
+footer .services p:hover{
+    color: gray;
+}
+
+.footer-cards input{
+    margin-top: 5px;
+}
+
+/* FIM FOOTER */
+
 
 
 /* Responsividade */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 
-    .section-1{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    label #btn{
+        display: block;
     }
 
-    .section-1 .area-title {
-        margin-right: 0px;
+    nav .logo{
+        left: 6%;
+        top: 20px;
+        width: 90px;
+        height: 50px;
     }
 
-    .section-1 .area-title h3 {
-        font-size: 15px;
-    }
-
-    .section-1 .area-title h1 {
-        font-size: 30px;
-    }
-
-    .section-1 .area-title a {
-        padding: 15px 30px;
-        width: 230px;
-        font-size: 15px;
-        margin-top: 0px;
-    }
-
-    .section-1 .image-1 img{
-        width: 275px;
-        height: auto;
-        margin-top: 20px;
-    }
-
-    .section-cards {
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 80px;
+        left: -100%;
         text-align: center;
+        transition: all .5s;
     }
 
-    .section-cards .cards {
-        align-items: center;
-        justify-content: center;
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
     }
     
-    .section-3 {
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    #check:checked ~ label #btn{
+        display: none;
+    }
+
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+
+    .banner .content {
+        max-width: 100%;
+    }
+
+    .banner .content h2 {
+        font-size: 25px;
+    }
+
+    .meeting .meeting-img img {
+        width: 290px;
+        height: 155px;
+    }
+
+    .meeting .meeting-txt {
+        width: 100%;
+    }
+
+    .company{
         flex-direction: column;
-        height: auto;
     }
 
-    .section-3 .area-title{
-        text-align: center;
+    .unmatched .cards1, .unmatched .cards2 {
+        flex-direction: column;
     }
 
-    .section-3 .area-title h1{
-        margin-top: 20px;
+    footer{
+        flex-direction: column;
+        padding: 20px;
     }
-    
+
+    footer .footer-cards{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .institutional h2, 
+    footer .services h2, 
+    footer .subscribe h2 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    footer .subscribe h2{
+        font-size: 20px;
+    }
+
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
 
-    .section-1{
+    label #btn{
+        display: block;
+    }
+
+    nav .logo{
+        left: 6%;
+        top: 20px;
+        width: 90px;
+        height: 50px;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a{
+        font-size: 20px;
+    }
+    
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    #check:checked ~ label #btn{
+        display: none;
+    }
+
+    #check:checked ~ label #cancel{
+        display: block;
+    }
+
+    .banner .content {
+        max-width: 100%;
+    }
+
+    .meeting .meeting-txt {
+        width: 100%;
+    }
+
+    .unmatched .cards1, .unmatched .cards2 {
         flex-direction: column;
-        align-items: center;
+    }
+
+    footer{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    footer .footer-cards{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
-    .section-1 .area-title {
-        margin-right: 0px;
+    footer .institutional h2, 
+    footer .services h2, 
+    footer .subscribe h2 {
+        margin-top: 10px;
+        margin-bottom: 0px;
     }
 
-    .section-1 .area-title h3 {
+    footer .subscribe h2{
         font-size: 20px;
     }
 
-    .section-1 .area-title h1 {
-        font-size: 40px;
-    }
-
-    .section-1 .area-title a {
-        padding: 15px 30px;
-        width: 300px;
-        font-size: 15px;
-        margin-top: 10px;
-    }
-
-    .section-1 .image-1 img{
-        width: 400px;
-        height: auto;
-        margin-top: 20px;
-    }
-
-    .section-cards {
-        text-align: center;
-    }
-
-    .section-cards .cards {
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .section-3 {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .section-3 .area-title{
-        text-align: center;
-    }
-
-    .section-3 .area-title h1{
-        margin-top: 20px;
-    }
 
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
-    .section-1 .area-title {
-        margin-right: 0px;
+    .unmatched .cards1 .unmatched-card i,
+    .unmatched .cards2 .unmatched-card i{
+        font-size: 35px;
+        width: 75px;
+        position: relative;
+        margin-top: -30px;
+        margin-left: 10px;
+        text-align: center;
     }
 
-    .section-1 .area-title h3 {
-        font-size: 15px;
-    }
-
-    .section-1 .area-title h1 {
-        font-size: 30px;
-    }
-
-    .section-1 .area-title a {
-        padding: 15px 30px;
-        width: 250px;
-        font-size: 15px;
+    .unmatched .cards1 .unmatched-card h2,
+    .unmatched .cards1 .unmatched-card p,
+    .unmatched .cards2 .unmatched-card h2,
+    .unmatched .cards2 .unmatched-card p{
+        color: white;
         margin-top: 10px;
     }
-
-    .section-1 .image-1 img{
-        width: 400px;
-        height: auto;
-        margin-top: 20px;
-        margin-left: 10px;
-    }
-
-    .section-cards {
-        text-align: center;
-    }
-
-    .section-cards .cards {
-        align-items: center;
-        justify-content: center;
-    }
     
-    .section-3 {
-        height: auto;
+    .unmatched .cards1 .unmatched-card h2,
+    .unmatched .cards2 .unmatched-card h2{
+        font-size: 20px;
     }
 
-    .section-3 .area-title{
-        text-align: center;
-    }
-
-    .section-3 .area-title h1{
-        margin-top: 20px;
+    .unmatched .cards1 .unmatched-card p,
+    .unmatched .cards2 .unmatched-card p{
+        font-size: 15px;
     }
 
 }
+
 
 /*  
 
